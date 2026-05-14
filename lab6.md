@@ -29,7 +29,25 @@ lecz dobrze widoczne jest, że wynika to z mniejszego "przesunięcia" wszystkich
 
 
 ## Eksperymenty z ilością jednostek LSTM
-```Ten rozdział zostanie dodany trochę później```
+Przy 30 jednostkach LSTM wykres dopasowania danych ma mniejsze "przesunięcie" i wygląda być nieco bardziej dopasowany do naszych dancyh, ale w bardzo subtelny sposób.
+
+<img width="647" height="491" alt="image" src="https://github.com/user-attachments/assets/0568263e-8094-4fe9-ab63-a91e676a83d6" />
+
+*Wykres danych presykcyjnych oraz danych rzeczywistych dla modelu LSTM przy 30 jednostkach.*
+
+Przy zmianie bardziej drastycznej (w moim przypadku obniżeniu do 10 jednostek LSTM) model już wyraźnie gorzej sobie poradził. Wykres jest zbyt gładki i mało dostosowany do danych rzeczywistych.
+
+<img width="647" height="491" alt="image" src="https://github.com/user-attachments/assets/5d10bdfa-131f-49a8-98d2-ddaad4da88a2" />
+
+*Wykres danych presykcyjnych oraz danych rzeczywistych dla modelu LSTM przy 10 jednostkach.*
+
+W przypadku 70 jednostek na wykresie możemy zobaczyć, że dane predykcyjne zrobiły się bardziej "szpiczaste", lepiej dopasowują się do nagłych zmian na rynku,
+przseunięcie natomiast jest wyraźnie mniejsze, niż w przypadku mniejszej ilości jednostek. Udało się również uzyskać RSE na poziomie 1.4%, co było jednym z zadań do wykonania podczas laboratorium.
+
+<img width="647" height="491" alt="image" src="https://github.com/user-attachments/assets/0bafa5d3-7315-4c72-9c00-0d38bd774e17" />
+
+*Wykres danych presykcyjnych oraz danych rzeczywistych dla modelu LSTM przy 70 jednostkach.*
+
 ## Testy innych optymalizatorów
 ### SGD
 ```Ten rozdział zostanie dodany trochę później```
@@ -48,8 +66,6 @@ lecz dobrze widoczne jest, że wynika to z mniejszego "przesunięcia" wszystkich
 ## Zmiana atrybutu predykcji z "High" na "Close"
 ```Ten rozdział zostanie dodany trochę później```
 ## Test mechanizmu early stoppung
-```Ten rozdział zostanie dodany trochę później```
-## RMSE <2.0
-```Ten rozdział zostanie dodany trochę później```
+Dodanie early stopping do algorytmu znacznie skróciło średni czas dopasowania modelu, szczególne podczas wykorzystania modelu LSTM o większej ilości jednostek (>30)
 ## Najlepsza konfiguracja dla predykcji
 ```Ten rozdział zostanie dodany trochę później```
